@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product Management</title>
+
+  <!-- Library Scripts -->
+  <script src="node_modules/angular/angular.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="app/app.js"></script>
+
+  <!-- Product Controllers -->
+  <script src="app/products/productListCtrl.js"></script>
+
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body ng-app="productManagement">
+  <table ng-controller="ProductListCtrl as vm">
+    <thead>
+      <tr>
+        <td>Image</td>
+        <td>Product</td>
+        <td>Code</td>
+        <td>Available</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="product in vm.products">
+        <td>
+          <img ng-src="{{product.imageUrl}}" title="{{product.productName}}">
+        </td>
+        <td>{{product.productName}}</td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.releaseDate}}</td>
+        <td>{{product.price | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
