@@ -18,6 +18,9 @@
   "homepage": "https://github.com/brenowschneider/product-management#readme",
   "dependencies": {
     "angular": "1.6.9",
+    "angular-resource": "1.6.9",
+    "angular-mocks": "1.6.9",
+    "@uirouter/angularjs": "1.0.15",
     "bootstrap": "3.3.7"
   }
 }

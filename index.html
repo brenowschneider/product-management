@@ -9,10 +9,18 @@
 
   <!-- Library Scripts -->
   <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-resource/angular-resource.js"></script>
+  <script src="node_modules/angular-mocks/angular-mocks.js"></script>
+  <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
 
   <!-- Application Scripts -->
   <script src="app/app.js"></script>
 
+  <!-- Services -->
+  <script src="common/services/common.services.js"></script>
+  <script src="common/services/productResource.js"></script>
+  <script src="common/services/productResourceMock.js"></script>
+  
   <!-- Product Controllers -->
   <script src="app/products/productListCtrl.js"></script>
 
@@ -22,37 +30,7 @@
 </head>
 
 <body ng-app="productManagement">
-  <div class="container">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        Product List
-      </div>
-      <table class="table" ng-controller="ProductListCtrl as vm">
-        <thead>
-          <tr>
-            <td>
-              <button class="btn btn-primary" type="button" ng-click="vm.toggleImage()">{{vm.showImage? "Hide" : "Show"}} Image</button>
-            </td>
-            <td>Product</td>
-            <td>Code</td>
-            <td>Available</td>
-            <td>Price</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="product in vm.products">
-            <td>
-              <img style="max-height: 60px;" ng-if="vm.showImage" ng-src="{{product.imageUrl}}" title="{{product.productName}}">
-            </td>
-            <td>{{product.productName}}</td>
-            <td>{{product.productCode}}</td>
-            <td>{{product.releaseDate}}</td>
-            <td>{{product.price | currency}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  
 </body>
 
 </html>
