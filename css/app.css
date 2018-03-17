@@ -2,6 +2,18 @@ body {
   background-color: rgb(160, 200, 253)
 }
 
+a {
+  cursor: pointer;
+}
+
 table td img {
   max-height: 50px;
+}
+
+.homepage-heading {
+  font-size: x-large;
+}
+
+.homepage-img {
+  background-image: url();
 }
