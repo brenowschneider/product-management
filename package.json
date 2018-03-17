@@ -1,0 +1,23 @@
+{
+  "name": "product-management",
+  "version": "1.0.0",
+  "description": "AngularJS Application of AngularJS Line of Business Course on Pluralsight",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenowschneider/product-management.git"
+  },
+  "author": "Breno Wruck Schneider",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brenowschneider/product-management/issues"
+  },
+  "homepage": "https://github.com/brenowschneider/product-management#readme",
+  "dependencies": {
+    "angular": "1.6.9",
+    "bootstrap": "3.3.7"
+  }
+}
