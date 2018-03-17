@@ -1,0 +1,7 @@
+body {
+  background-color: rgb(160, 200, 253)
+}
+
+table td img {
+  max-height: 50px;
+}
