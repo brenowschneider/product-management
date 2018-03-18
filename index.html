@@ -27,6 +27,7 @@
   <!-- Product Controllers -->
   <script src="app/products/productListCtrl.js"></script>
   <script src="app/products/productDetailCtrl.js"></script>
+  <script src="app/products/productEditCtrl.js"></script>
 
 
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
@@ -53,7 +54,7 @@
             <a ui-sref="productList">Product List</a>
           </li>
           <li>
-            <a ui-sref="productEdit({productId:0})">
+            <a ui-sref="productEdit.info({productId:0})">
               <i class="fa fa-plus"></i> Add Product</a>
           </li>
         </ul>
