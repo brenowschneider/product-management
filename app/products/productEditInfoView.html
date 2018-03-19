@@ -1,25 +1,36 @@
-<form class="form-horizontal" name="productForm">
+<form class="form-horizontal" name="productForm" novalidate>
   <fieldset>
     <legend>Basic Product Information</legend>
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': productForm.inputProductName.$invalid && productForm.inputProductName.$touched}">
       <label class="col-md-2 control-label" for="inputProductName">Product Name</label>
       <div class="col-md-4">
-
-        <input class="form-control" id="inputProductName" type="text" placeholder="Product Name" ng-model="vm.product.productName">
+        <input name="inputProductName" class="form-control" id="inputProductName" type="text" placeholder="Product Name (required)"
+          ng-model="vm.product.productName" ng-minlength="2" required>
+        <span ng-messages="productForm.inputProductName.$error" ng-show="productForm.inputProductName.$invalid && productForm.inputProductName.$touched"
+          role="alert">
+          <span class="help-block has-error" ng-message="required">Please enter the Product Name</span>
+          <span class="help-block has-error" ng-message="minlength">The Product Name must have at least 2 characters</span>
+        </span>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error': productForm.inputProductCode.$invalid && productForm.inputProductCode.$touched}">
       <label class="col-md-2 control-label" for="inputProductCode">Product Code</label>
       <div class="col-md-4">
-        <input class="form-control" id="inputProductCode" ng-model="vm.product.productCode" ui-mask="AAA-****">
+        <input name="inputProductCode" class="form-control" id="inputProductCode" ng-model="vm.product.productCode" ui-mask="AAA-**** (required)"
+          required>
+        <span ng-messages="productForm.inputProductCode.$error" ng-show="productForm.inputProductCode.$invalid && productForm.inputProductCode.$touched"
+          role="alert">
+          <span class="help-block has-error" ng-message="required">Please enter the Product Code</span>
+        </span>
       </div>
+    </div>
     </div>
     <div class="form-group">
       <label for="inputAvailabiltyDate" class="col-md-2 control-label">Availability Date</label>
       <div class="col-md-4">
         <div class="input-group">
-          <input type="text" id="inputAvailabiltyDate" class="form-control" uib-datepicker-popup="MMM dd, yyyy " uib-date-format="MMM dd, yyyy" as-date is-open="vm.opened"
-            ng-model="vm.product.releaseDate">
+          <input type="text" id="inputAvailabiltyDate" class="form-control" uib-datepicker-popup="MMM dd, yyyy " uib-date-format="MMM dd, yyyy"
+            as-date is-open="vm.opened" ng-model="vm.product.releaseDate">
           <span class="input-group-btn">
             <button ng-click="vm.open($event)" class="btn btn-default">
               <i class="fa fa-calendar"></i>
@@ -38,7 +49,7 @@
   <div class="form-group">
     <div class="col-md-4 col-md-offset-2">
       <span>
-        <button class="btn btn-primary" ng-click="vm.submit()">
+        <button class="btn btn-primary" ng-click="vm.submit(productForm.$valid)">
           Save
         </button>
       </span>
