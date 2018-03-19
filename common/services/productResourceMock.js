@@ -19,7 +19,7 @@
         "productId": 2,
         "productName": "Garden Cart",
         "productCode": "GDN-0023",
-        "releaseDate": "March 18, 2010",
+        "releaseDate": new Date("March 18, 2010"),
         "description": "15 gallon capacity rolling garden cart",
         "cost": 20.00,
         "price": 32.99,

@@ -9,10 +9,45 @@
       </div>
     </div>
     <div class="form-group">
+      <label class="col-md-2 control-label" for="inputProductCode">Product Code</label>
+      <div class="col-md-4">
+        <input class="form-control" id="inputProductCode" ng-model="vm.product.productCode" ui-mask="AAA-****">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAvailabiltyDate" class="col-md-2 control-label">Availability Date</label>
+      <div class="col-md-4">
+        <div class="input-group">
+          <input type="text" id="inputAvailabiltyDate" class="form-control" uib-datepicker-popup="MMM dd, yyyy " ui-date-format="MMM dd, yyyy" as-date is-open="vm.opened"
+            ng-model="vm.product.releaseDate">
+          <span class="input-group-btn">
+            <button ng-click="vm.open($event)" class="btn btn-default">
+              <i class="fa fa-calendar"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
       <label class="col-md-2 control-label" for="inputProductDescription">Description</label>
       <div class="col-md-10">
         <textarea class="form-control" id="inputProductDescription" rows="3" type="text" placeholder="Product Description" ng-model="vm.product.description"></textarea>
       </div>
     </div>
   </fieldset>
+  <div class="form-group">
+    <div class="col-md-4 col-md-offset-2">
+      <span>
+        <button class="btn btn-primary" ng-click="vm.submit()">
+          Save
+        </button>
+      </span>
+      <span>
+        <button class="btn btn-default" ng-click="vm.cancel()">
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+
 </form>
