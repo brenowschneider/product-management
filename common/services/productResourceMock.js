@@ -93,7 +93,11 @@
 
     $httpBackend.whenPOST(productUrl).respond(function (method, url, data) {
       var product = angular.fromJson(data);
-
+      
+      if (product.releaseDate) {
+        product.releaseDate = new Date(product.releaseDate);
+      }
+      
       if (!product.productId) {
         //new product
         product.productId = products[products.length - 1].productId + 1;
@@ -102,9 +106,6 @@
         //updated product
         for (var i = 0; i < products.length; i++) {
           if (products[i].productId == product.productId) {
-            if (product.releaseDate) {
-              product.releaseDate = new Date(product.releaseDate);
-            }
             products[i] = product;
             break;
           }
