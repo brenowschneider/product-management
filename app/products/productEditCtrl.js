@@ -21,7 +21,9 @@
     }
 
     vm.submit = function () {
-      vm.product.$save();
+      vm.product.$save(function(data){
+        toastr.success("Save Succesful");
+      });
     }
 
     vm.cancel = function () {
@@ -34,7 +36,7 @@
         vm.product.tags = vm.product.tags ? vm.product.tags.concat(tagsArray) : tagsArray;
         vm.newTags = "";
       } else {
-        console.log("Please enter one or more tags separeted by commas")
+        toastr.error("Please enter one or more tags separated by commas");
       }
     }
 

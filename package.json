@@ -17,14 +17,15 @@
   },
   "homepage": "https://github.com/brenowschneider/product-management#readme",
   "dependencies": {
-    "angular": "1.6.9",
-    "angular-resource": "1.6.9",
-    "angular-mocks": "1.6.9",
     "@uirouter/angularjs": "1.0.15",
-    "angular-ui-utils": "0.1.1",
+    "angular": "1.6.9",
+    "angular-mocks": "1.6.9",
+    "angular-resource": "1.6.9",
     "angular-ui-bootstrap": "2.5.6",
+    "angular-ui-utils": "0.1.1",
     "bootstrap": "3.3.7",
+    "font-awesome": "4.7.0",
     "jquery": "3.3.1",
-    "font-awesome": "4.7.0"
+    "toastr": "^2.1.4"
   }
 }
