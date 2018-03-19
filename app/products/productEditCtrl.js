@@ -28,5 +28,19 @@
       $state.go('productList');
     }
 
+    vm.addTags = function (tags) {
+      if (tags) {
+        var tagsArray = tags.split(',');
+        vm.product.tags = vm.product.tags ? vm.product.tags.concat(tagsArray) : tagsArray;
+        vm.newTags = "";
+      } else {
+        console.log("Please enter one or more tags separeted by commas")
+      }
+    }
+
+    vm.removeTag = function (index) {
+      vm.product.tags.splice(index, 1);
+    }
+
   }
 }());

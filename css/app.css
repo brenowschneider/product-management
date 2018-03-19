@@ -47,3 +47,7 @@ form legend {
   background: #007ACC;
   color: #fff;
 }
+
+.tag-button {
+  margin-bottom: 20px;
+}
