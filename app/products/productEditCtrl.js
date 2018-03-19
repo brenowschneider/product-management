@@ -21,10 +21,7 @@
     }
 
     vm.submit = function () {
-      console.log(typeof(vm.product.releaseDate));
-      console.log(typeof(vm.product.releaseDate));
       vm.product.$save();
-      console.log(vm.product);
     }
 
     vm.cancel = function () {

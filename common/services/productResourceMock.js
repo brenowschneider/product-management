@@ -7,7 +7,7 @@
         "productId": 1,
         "productName": "Leaf Rake",
         "productCode": "GDN-0011",
-        "releaseDate": "March 19, 2009",
+        "releaseDate": new Date("March 19, 2009"),
         "description": "Leaf rake with 48-inch wooden handle.",
         "cost": 9.00,
         "price": 19.95,
@@ -31,7 +31,7 @@
         "productId": 5,
         "productName": "Hammer",
         "productCode": "TBX-0048",
-        "releaseDate": "May 21, 2013",
+        "releaseDate": new Date("May 21, 2013"),
         "description": "Curved claw steel hammer",
         "cost": 1.00,
         "price": 8.99,
@@ -43,7 +43,7 @@
         "productId": 8,
         "productName": "Saw",
         "productCode": "TBX-0022",
-        "releaseDate": "May 15, 2009",
+        "releaseDate": new Date("May 15, 2009"),
         "description": "15-inch steel blade hand saw",
         "cost": 6.95,
         "price": 11.55,
@@ -55,7 +55,7 @@
         "productId": 10,
         "productName": "Video Game Controller",
         "productCode": "GMG-0042",
-        "releaseDate": "October 15, 2002",
+        "releaseDate": new Date("October 15, 2002"),
         "description": "Standard two-button video game controller",
         "cost": 2.22,
         "price": 35.95,
@@ -102,6 +102,9 @@
         //updated product
         for (var i = 0; i < products.length; i++) {
           if (products[i].productId == product.productId) {
+            if (product.releaseDate) {
+              product.releaseDate = new Date(product.releaseDate);
+            }
             products[i] = product;
             break;
           }
