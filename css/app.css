@@ -32,6 +32,10 @@ form legend {
   text-shadow: 0 3px 0, rgba(0, 0, 0, 0.1)
 }
 
+input[type=number] {
+  text-align: right;
+}
+
 .wizard a {
   background: #efefef;
   display: inline-block;
